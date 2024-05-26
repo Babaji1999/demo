@@ -1,0 +1,66 @@
+package test;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import CommonPage.AbstractComponents;
+import PageObject.CartPage;
+import PageObject.CheckoutPage;
+import PageObject.ConfirmationPage;
+import PageObject.LandingPage;
+import PageObject.ProductCatalog;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.LoginPage;
+
+public class LoginPageScript{
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		String productName = "ZARA COAT 3";
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver  = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		LandingPage landingpage = new LandingPage(driver);
+		AbstractComponents abstractComponents = new AbstractComponents(driver); 
+		
+		landingpage.naviagte_LandingPage();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		
+		String page_ActualHeading = "Rahul Shetty Academy";
+		String page_LoginHeading = "Log in";
+		
+		Assert.assertEquals(driver.findElement(LoginPage.homePageHeading).getText(), page_ActualHeading, "User not landed on correct page.");
+		Assert.assertEquals(driver.findElement(LoginPage.loginHeading).getText(), page_LoginHeading, "Login page is not displayed.");
+		
+		ProductCatalog productCatalog = landingpage.loginApplication("Aayush@gmail.com", "Aayush@123");
+		 
+		List<WebElement> products = productCatalog.getproductList();
+		productCatalog.addProductToCart(productName);
+		
+		CartPage cartPage = abstractComponents.gotToCartPage();
+		
+		Assert.assertTrue(cartPage.VerifyProductDisplay(productName), "Selected item is not aaded in cart.");
+		
+		CheckoutPage checkoutPage = cartPage.gotoCheckOutPage();
+		checkoutPage.selectCountry("India");
+		ConfirmationPage confirmationPage = checkoutPage.submitOrder();
+	
+		Assert.assertTrue(confirmationPage.getConfirmationMessage(), "Order confirmation message not displayed.");
+		
+		landingpage.naviagte_LandingPage_AfterSignOut();
+		Assert.assertTrue(driver.findElement(LoginPage.LogoutMessage).isDisplayed(), "User not able to logout successfully.");
+
+		driver.quit();
+	}
+
+}

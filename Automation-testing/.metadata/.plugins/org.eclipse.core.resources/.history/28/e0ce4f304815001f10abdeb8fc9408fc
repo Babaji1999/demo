@@ -1,0 +1,19 @@
+package PageObject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class CheckoutPage {
+
+WebDriver driver;
+	
+	public CheckoutPage(WebDriver driver) {
+		super(driver);
+//		initilization
+		this.driver = driver;
+//		Why this method is created--Before going to any method first this constructor will execute
+		PageFactory.initElements(driver, this);
+	}
+
+	
+}

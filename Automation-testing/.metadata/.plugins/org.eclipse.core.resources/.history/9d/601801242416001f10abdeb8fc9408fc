@@ -1,0 +1,53 @@
+package test;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import PageObject.CartPage;
+import PageObject.ProductCatalog;
+import lib.BrowserSetUp;
+import pages.LoginPage;
+
+public class ErrorValidation extends BrowserSetUp{
+	
+	@Test(groups = {"errorHandling"})
+	public void loginError() throws IOException {
+		
+		String page_ActualHeading = "Rahul Shetty Academy";
+		String page_LoginHeading = "Log in";	
+		String invalidLogin_Message = " Incorrect email or password. ";
+		
+		Assert.assertEquals(driver.findElement(LoginPage.homePageHeading).getText(), page_ActualHeading, "User not landed on correct page.");
+		Assert.assertEquals(driver.findElement(LoginPage.loginHeading).getText(), page_LoginHeading, "Login page is not displayed.");
+		Thread.sleep(5000);
+		landingpage.loginApplication("nikhil2001@gmail.com", "Nikhil@1234");
+		Assert.assertEquals(invalidLogin_Message.trim(), landingpage.getErrorMessage().trim(), "Invalid login message is not displayed.");
+		
+	}
+	
+	@Test
+	public void productError() throws IOException {
+		
+		String productName = "ZARA COAT 3";
+		String wrong_productName = "ZARA COAT 33";
+		String page_ActualHeading = "Rahul Shetty Academy";
+		String page_LoginHeading = "Log in";	
+		
+		Assert.assertEquals(driver.findElement(LoginPage.homePageHeading).getText(), page_ActualHeading, "User not landed on correct page.");
+		Assert.assertEquals(driver.findElement(LoginPage.loginHeading).getText(), page_LoginHeading, "Login page is not displayed.");
+		
+		ProductCatalog productCatalog = landingpage.loginApplication("nikhil2001@gmail.com", "Nikhil@123");
+		 
+		List<WebElement> products = productCatalog.getproductList();
+		productCatalog.addProductToCart(productName);
+		
+		CartPage cartPage = productCatalog.gotToCartPage();
+		
+		Assert.assertFalse(cartPage.VerifyProductDisplay(wrong_productName), "Selected item is not aaded in cart.");
+		
+	}
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/bcpkix-jdk18on-1.76.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/bcprov-jdk18on-1.76.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/bcutil-jdk18on-1.76.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/commons-codec-1.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/commons-compress-1.26.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/commons-io-2.15.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/commons-lang3-3.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/dec-0.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/docker-java-3.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/docker-java-api-3.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/docker-java-core-3.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/docker-java-transport-3.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/docker-java-transport-httpclient5-3.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/gson-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/httpclient5-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/httpcore5-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/httpcore5-h2-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/jackson-annotations-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/jackson-core-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/jackson-databind-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/jcl-over-slf4j-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/jna-5.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/slf4j-api-2.0.12.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium-Drivers-Jars/Selenium-WebDriverManager_Jar/webdrivermanager-5.8.0.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
